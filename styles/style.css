@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+body {
+    background-color: #EFEFEF;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.checkbox {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.checkbox input {
+    opacity: 1;
+    width: 0;
+    height: 0;
+}
+
+.check-deslizante {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.check-deslizante:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.check-deslizante:before {
+    transform: translateX(26px);
+}
+
+.check-deslizante.redondeado {
+    border-radius: 34px;
+}
+
+.check-deslizante.redondeado:before {
+    border-radius: 50%;
+}
+
+.grafico {
+    width: 600px;
+    height: auto;
+    margin-top: 1rem;
+}
